@@ -1,4 +1,4 @@
-# ColorPrint-for-Python  
+# EasyColorPrinter-for-Python  
 
 *コマンドライン上でPythonプログラムを実行する際、文字の色や背景色をエスケープシーケンスにより色付けする機能を、print関数としてオーバーライドする、Pythonのライブラリです。  
 
