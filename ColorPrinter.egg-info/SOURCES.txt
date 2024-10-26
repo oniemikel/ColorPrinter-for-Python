@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+setup.py
+ColorPrinter/__init__.py
+ColorPrinter/main.py
+ColorPrinter.egg-info/PKG-INFO
+ColorPrinter.egg-info/SOURCES.txt
+ColorPrinter.egg-info/dependency_links.txt
+ColorPrinter.egg-info/requires.txt
+ColorPrinter.egg-info/top_level.txt
