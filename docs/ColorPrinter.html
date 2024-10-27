@@ -11,6 +11,8 @@
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="_static/documentation_options.js?v=841abef3"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
@@ -106,25 +108,25 @@
            <div itemprop="articleBody">
              
   <section id="colorprinter-package">
-<h1>ColorPrinter package<a class="headerlink" href="#colorprinter-package" title="Link to this heading">¶</a></h1>
+<h1>ColorPrinter package<a class="headerlink" href="#colorprinter-package" title="Link to this heading"></a></h1>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
 <section id="module-ColorPrinter.main">
-<span id="colorprinter-main-module"></span><h2>ColorPrinter.main module<a class="headerlink" href="#module-ColorPrinter.main" title="Link to this heading">¶</a></h2>
+<span id="colorprinter-main-module"></span><h2>ColorPrinter.main module<a class="headerlink" href="#module-ColorPrinter.main" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="ColorPrinter.main.ColorPrinter">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ColorPrinter.main.</span></span><span class="sig-name descname"><span class="pre">ColorPrinter</span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ColorPrinter.main.</span></span><span class="sig-name descname"><span class="pre">ColorPrinter</span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>色付きのテキストをコンソールに出力するクラス。</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ColorPrinter.main.ColorPrinter.COLOR_MAP">
-<span class="sig-name descname"><span class="pre">COLOR_MAP</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'black':</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">255),</span> <span class="pre">'blue':</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">255,</span> <span class="pre">255),</span> <span class="pre">'cyan':</span> <span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">255,</span> <span class="pre">255),</span> <span class="pre">'gray':</span> <span class="pre">(128,</span> <span class="pre">128,</span> <span class="pre">128,</span> <span class="pre">255),</span> <span class="pre">'green':</span> <span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">0,</span> <span class="pre">255),</span> <span class="pre">'magenta':</span> <span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">255,</span> <span class="pre">255),</span> <span class="pre">'red':</span> <span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">255),</span> <span class="pre">'skyblue':</span> <span class="pre">(135,</span> <span class="pre">206,</span> <span class="pre">235,</span> <span class="pre">255),</span> <span class="pre">'white':</span> <span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">255,</span> <span class="pre">255),</span> <span class="pre">'yellow':</span> <span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">0,</span> <span class="pre">255)}</span></em><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.COLOR_MAP" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">COLOR_MAP</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'black':</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">255),</span> <span class="pre">'blue':</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">255,</span> <span class="pre">255),</span> <span class="pre">'cyan':</span> <span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">255,</span> <span class="pre">255),</span> <span class="pre">'gray':</span> <span class="pre">(128,</span> <span class="pre">128,</span> <span class="pre">128,</span> <span class="pre">255),</span> <span class="pre">'green':</span> <span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">0,</span> <span class="pre">255),</span> <span class="pre">'magenta':</span> <span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">255,</span> <span class="pre">255),</span> <span class="pre">'red':</span> <span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">255),</span> <span class="pre">'skyblue':</span> <span class="pre">(135,</span> <span class="pre">206,</span> <span class="pre">235,</span> <span class="pre">255),</span> <span class="pre">'white':</span> <span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">255,</span> <span class="pre">255),</span> <span class="pre">'yellow':</span> <span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">0,</span> <span class="pre">255)}</span></em><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.COLOR_MAP" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ColorPrinter.main.ColorPrinter.get_color_by_name">
-<span class="sig-name descname"><span class="pre">get_color_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.get_color_by_name" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_color_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.get_color_by_name" title="Link to this definition"></a></dt>
 <dd><p>色名からRGBA値を取得する。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -141,7 +143,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ColorPrinter.main.ColorPrinter.parse_color_tag">
-<span class="sig-name descname"><span class="pre">parse_color_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.parse_color_tag" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">parse_color_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.parse_color_tag" title="Link to this definition"></a></dt>
 <dd><p>タグを解析して対応するエスケープシーケンスに変換。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -158,7 +160,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ColorPrinter.main.ColorPrinter.print_with_color">
-<span class="sig-name descname"><span class="pre">print_with_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.print_with_color" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">print_with_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.print_with_color" title="Link to this definition"></a></dt>
 <dd><p>テキスト内のタグを解析して色付きで表示。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -173,13 +175,13 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ColorPrinter.main.ColorPrinter.reset_styles">
-<span class="sig-name descname"><span class="pre">reset_styles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.reset_styles" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset_styles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.reset_styles" title="Link to this definition"></a></dt>
 <dd><p>現在のスタイルをリセットする。</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ColorPrinter.main.ColorPrinter.reset_styles_to_output">
-<span class="sig-name descname"><span class="pre">reset_styles_to_output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.reset_styles_to_output" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset_styles_to_output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.reset_styles_to_output" title="Link to this definition"></a></dt>
 <dd><p>現在のアクティブスタイルに基づいてリセット用のエスケープシーケンスを生成。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -193,7 +195,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ColorPrinter.main.ColorPrinter.set_rgba_background">
-<span class="sig-name descname"><span class="pre">set_rgba_background</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.set_rgba_background" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_rgba_background</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.set_rgba_background" title="Link to this definition"></a></dt>
 <dd><p>RGBA値に基づいて背景色のANSIエスケープシーケンスを生成する。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -210,7 +212,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ColorPrinter.main.ColorPrinter.set_rgba_color">
-<span class="sig-name descname"><span class="pre">set_rgba_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.set_rgba_color" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_rgba_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.set_rgba_color" title="Link to this definition"></a></dt>
 <dd><p>RGBA値に基づいて前景色のANSIエスケープシーケンスを生成する。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -229,7 +231,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ColorPrinter.main.print">
-<span class="sig-prename descclassname"><span class="pre">ColorPrinter.main.</span></span><span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.main.print" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ColorPrinter.main.</span></span><span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.main.print" title="Link to this definition"></a></dt>
 <dd><p>色付きでテキストを表示するために、print関数をオーバーラップするための関数。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -244,30 +246,30 @@
 
 </section>
 <section id="module-ColorPrinter">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ColorPrinter" title="Link to this heading">¶</a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ColorPrinter" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="ColorPrinter.ColorPrinter">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ColorPrinter.</span></span><span class="sig-name descname"><span class="pre">ColorPrinter</span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ColorPrinter.</span></span><span class="sig-name descname"><span class="pre">ColorPrinter</span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>色付きのテキストをコンソールに出力するクラス。</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ColorPrinter.ColorPrinter.COLOR_MAP">
-<span class="sig-name descname"><span class="pre">COLOR_MAP</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'black':</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">255),</span> <span class="pre">'blue':</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">255,</span> <span class="pre">255),</span> <span class="pre">'cyan':</span> <span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">255,</span> <span class="pre">255),</span> <span class="pre">'gray':</span> <span class="pre">(128,</span> <span class="pre">128,</span> <span class="pre">128,</span> <span class="pre">255),</span> <span class="pre">'green':</span> <span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">0,</span> <span class="pre">255),</span> <span class="pre">'magenta':</span> <span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">255,</span> <span class="pre">255),</span> <span class="pre">'red':</span> <span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">255),</span> <span class="pre">'skyblue':</span> <span class="pre">(135,</span> <span class="pre">206,</span> <span class="pre">235,</span> <span class="pre">255),</span> <span class="pre">'white':</span> <span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">255,</span> <span class="pre">255),</span> <span class="pre">'yellow':</span> <span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">0,</span> <span class="pre">255)}</span></em><a class="headerlink" href="#ColorPrinter.ColorPrinter.COLOR_MAP" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">COLOR_MAP</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'black':</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">255),</span> <span class="pre">'blue':</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">255,</span> <span class="pre">255),</span> <span class="pre">'cyan':</span> <span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">255,</span> <span class="pre">255),</span> <span class="pre">'gray':</span> <span class="pre">(128,</span> <span class="pre">128,</span> <span class="pre">128,</span> <span class="pre">255),</span> <span class="pre">'green':</span> <span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">0,</span> <span class="pre">255),</span> <span class="pre">'magenta':</span> <span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">255,</span> <span class="pre">255),</span> <span class="pre">'red':</span> <span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">255),</span> <span class="pre">'skyblue':</span> <span class="pre">(135,</span> <span class="pre">206,</span> <span class="pre">235,</span> <span class="pre">255),</span> <span class="pre">'white':</span> <span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">255,</span> <span class="pre">255),</span> <span class="pre">'yellow':</span> <span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">0,</span> <span class="pre">255)}</span></em><a class="headerlink" href="#ColorPrinter.ColorPrinter.COLOR_MAP" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ColorPrinter.ColorPrinter.active_styles">
-<span class="sig-name descname"><span class="pre">active_styles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ColorPrinter.ColorPrinter.active_styles" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">active_styles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ColorPrinter.ColorPrinter.active_styles" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ColorPrinter.ColorPrinter.bold">
-<span class="sig-name descname"><span class="pre">bold</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ColorPrinter.ColorPrinter.bold" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">bold</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ColorPrinter.ColorPrinter.bold" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ColorPrinter.ColorPrinter.get_color_by_name">
-<span class="sig-name descname"><span class="pre">get_color_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter.get_color_by_name" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_color_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter.get_color_by_name" title="Link to this definition"></a></dt>
 <dd><p>色名からRGBA値を取得する。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -284,12 +286,12 @@
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ColorPrinter.ColorPrinter.italic">
-<span class="sig-name descname"><span class="pre">italic</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ColorPrinter.ColorPrinter.italic" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">italic</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ColorPrinter.ColorPrinter.italic" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ColorPrinter.ColorPrinter.parse_color_tag">
-<span class="sig-name descname"><span class="pre">parse_color_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter.parse_color_tag" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">parse_color_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter.parse_color_tag" title="Link to this definition"></a></dt>
 <dd><p>タグを解析して対応するエスケープシーケンスに変換。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -306,7 +308,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ColorPrinter.ColorPrinter.print_with_color">
-<span class="sig-name descname"><span class="pre">print_with_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.ColorPrinter.print_with_color" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">print_with_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.ColorPrinter.print_with_color" title="Link to this definition"></a></dt>
 <dd><p>テキスト内のタグを解析して色付きで表示。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -321,18 +323,18 @@
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ColorPrinter.ColorPrinter.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ColorPrinter.ColorPrinter.reset" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ColorPrinter.ColorPrinter.reset" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ColorPrinter.ColorPrinter.reset_styles">
-<span class="sig-name descname"><span class="pre">reset_styles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.ColorPrinter.reset_styles" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset_styles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.ColorPrinter.reset_styles" title="Link to this definition"></a></dt>
 <dd><p>現在のスタイルをリセットする。</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ColorPrinter.ColorPrinter.reset_styles_to_output">
-<span class="sig-name descname"><span class="pre">reset_styles_to_output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter.reset_styles_to_output" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset_styles_to_output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter.reset_styles_to_output" title="Link to this definition"></a></dt>
 <dd><p>現在のアクティブスタイルに基づいてリセット用のエスケープシーケンスを生成。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -346,7 +348,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ColorPrinter.ColorPrinter.set_rgba_background">
-<span class="sig-name descname"><span class="pre">set_rgba_background</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter.set_rgba_background" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_rgba_background</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter.set_rgba_background" title="Link to this definition"></a></dt>
 <dd><p>RGBA値に基づいて背景色のANSIエスケープシーケンスを生成する。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -363,7 +365,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ColorPrinter.ColorPrinter.set_rgba_color">
-<span class="sig-name descname"><span class="pre">set_rgba_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter.set_rgba_color" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_rgba_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter.set_rgba_color" title="Link to this definition"></a></dt>
 <dd><p>RGBA値に基づいて前景色のANSIエスケープシーケンスを生成する。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -380,14 +382,14 @@
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ColorPrinter.ColorPrinter.underline">
-<span class="sig-name descname"><span class="pre">underline</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ColorPrinter.ColorPrinter.underline" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">underline</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ColorPrinter.ColorPrinter.underline" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ColorPrinter.print">
-<span class="sig-prename descclassname"><span class="pre">ColorPrinter.</span></span><span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.print" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ColorPrinter.</span></span><span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.print" title="Link to this definition"></a></dt>
 <dd><p>色付きでテキストを表示するために、print関数をオーバーラップするための関数。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
