@@ -1,5 +1,5 @@
 .. ColorPrinter documentation master file, created by
-   sphinx-quickstart on Sun Oct 27 19:09:42 2024.
+   sphinx-quickstart on Sun Oct 27 19:19:00 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
