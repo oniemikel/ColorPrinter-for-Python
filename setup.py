@@ -24,8 +24,7 @@ INSTALL_REQUIRES = [
 ]
 
 EXTRAS_REQUIRE = {
-    'tutorial': [
-    ]
+    
 }
 
 PACKAGES = [

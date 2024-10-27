@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: ColorPrinter
-Version: 1.2.0
+Version: 2.1.0
 Summary: Color Printer Func for Python
 Home-page: https://github.com/oniemikel/ColorPrinter-for-Python
 Author: OnieMikel
@@ -8,26 +8,30 @@ Maintainer: OnieMikel
 License: BSD 3-Clause
 Requires-Python: >=3.11
 Description-Content-Type: text/markdown
-License-File: LICENSE.txt
-Provides-Extra: tutorial
+License-File: LICENSE
 
-# ColorPrint-for-Python  
-
+# ColorPrinter-for-Python  
+  
 **コマンドライン上でPythonプログラムを実行する際、文字の色や背景色をエスケープシーケンスにより色付けする機能を、print関数としてオーバーライドする、Pythonのライブラリです。**  
 
 ## 使用準備1 - 直接ファイルからライブラリをインストールする  
-1. レポジトリ内にある、`ColorPrinter.whl`ファイルをダウンロードする。    
+1. レポジトリ内にある、`ColorPrinter-x.x.x-py3-none-any.whl`ファイルをダウンロードする。(distディレクトリにある)    
 2. 1でダウンロードしたファイルの絶対パスをコピーしておく。  
    例：
-   `C:\Users\xxxxxx\Downloads\ColorPrinter.whl`    
-4. コマンドプロンプト、もしくはPowershell(Windows)やTerminal(Linux、MacOS)を立ち上げ、以下のコマンドを入力する。  
-   例：
-   `pip install C:\Users\xxxxxx\Downloads\ColorPrinter.whl`    
+   `C:\Users\xxxxxx\Downloads\ColorPrinter-x.x.x-py3-none-any.whl`    
+4. コマンドラインに、以下のコマンドを入力する。  
+   例：コマンドプロンプト or Powershell
+   ```bacth
+   pip install C:\Users\xxxxxx\Downloads\ColorPrinter-x.x.x-py3-none-any.whl
+   ```    
 5. インストールが完了したら、使用できるようになる。  
   
 ## 使用準備2 - PyPlからインストールする    
-1. コマンドプロンプト、もしくはPowershell(Windows)やTerminal(Linux、MacOS)を立ち上げ、以下のコマンドを入力する。    
-   `pip install ColorPrint`
+1. コマンドラインに、以下のコマンドを入力する。  
+   例：コマンドプロンプト or Powershell
+   ```batch
+   pip install ColorPrinter
+   ```
      
    **注意**
    **pipコマンドでパッケージをインストールする際、同じパッケージ名が存在する等の理由により、以下のような警告が出ることがあります。**  
@@ -39,10 +43,69 @@ Provides-Extra: tutorial
 
 ## 使用方法  
 1. 使用したいPythonスクリプトファイル内に、以下の文を記述する。  
-   `import ColorPrint`
-2. 使用したいPythonスクリプトファイルを実行すると、print関数がオーバーライドされ、色指定をしたprint出力が行えるようになる。
----
+   ```python
+   from ColorPrinter import print
+   ```
+2. 使用したいPythonスクリプトファイルを実行すると、print関数がオーバーライドされ、色指定をしたprint出力が行えるようになる。  
+  
+  
+### 色指定の仕方  
+文字列内（クォーテーションで区切られた内部）において、色指定したい箇所を以下のように囲んで指定する。  
+  
+print関数で指定する文字列において（クォーテーションで区切った部分において）、フォーマット文字列を指定するときのように、波カッコ`{}`で`{fore:red}`や`{underline}`といったようなタグを、指定したい箇所に挿入するだけで、様々な文字の装飾を加えることができる。  
+  
++ 文法  
+   ```python
+   print(" ... {fore:<color>/back:<color>/bold/italic/underline} ... {...} ... {end (fore/back/bold/italic/underline) ...} ... {...}")
+   ```  
++ タグの種類  
+  
+   | タグ        | 名称                          | 
+   | :---------: | :--------------------------: | 
+   | `fore`      | フォアグラウンドカラー (前景色) | 
+   | `back`      | バックグラウンドカラー (背景色) | 
+   | `bold`      | ボールド体 (太字)              | 
+   | `italic`    | イタリック体 (斜字)            | 
+   | `underline` | アンダーライン (下線)          |
+   |             |                              |
+   | `end`       | 終了タグ                      |  
+
++ 指定できる色の種類  
+   + 色名で指定  
+
+      | 色コード   | 色名         | 対応するRGBAコード (r, g, b, a) | 
+      | :-------: | :----------: | :-----------------------------: | 
+      | `black`   | 黒           | (  0,   0,   0, 255)            | 
+      | `white`   | 白           | (255, 255, 255, 255)            | 
+      | `red`     | 赤           | (255,   0,   0, 255)            | 
+      | `green`   | 緑           | (  0, 255,   0, 255)            | 
+      | `blue`    | 青           | (  0,   0, 255, 255)            | 
+      | `yellow`  | 黄色         | (255, 255,   0, 255)            | 
+      | `cyan`    | シアン       | (  0, 255, 255, 255)            | 
+      | `magenta` | マゼンタ     | (255,   0, 255, 255)            | 
+      | `gray`    | グレー       | (128, 128, 128, 255)            | 
+      | `skyblue` | スカイブルー | (135, 206, 235, 255)            |  
+     
+   + RGBAコードで指定  
+      各値は、0~255の実数値で指定  
+      `rgba(<red>, <green>, <blue>, <alpha>)`  
+        
+      例：
+      `rgba(255, 0, 0, 255)`  
+      (この場合、`red`と同じ)
+
++ 各タグの説明  
+   + `end`タグを指定しない場合  
+      + `fore`  
+         フォアグラウンドカラー (前景色) の色を指定する。  
+         記述例：`fore:red`、`fore:rbga(255, 0, 0, 0)`  
+           
+         実行例：
+         
+
+   
 
 
-If you have any problems, please access the repository at GitHub:
+
+If you have any problems, please visit:
 https://github.com/oniemikel/ColorPrinter-for-Python
