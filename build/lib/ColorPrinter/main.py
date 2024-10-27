@@ -98,16 +98,43 @@ class ColorPrinter:
         """
         output: str = ""
 
-        if tag == "{end}":
-            # 全てのスタイルをリセットする
-            output += self.reset_styles_to_output()
+        # endタグの処理（特定の色やスタイルのみリセット）
+        if tag.startswith("{end"):
+            # まず、endタグでリセットする項目を特定
+            end_options = re.findall(r'end\s*(\w+)?', tag)
+            reset_options = set(end_options) if end_options[0] else {"fore", "back", "bold", "italic", "underline"}
+
+            # 全体リセット
+            output += self.reset
+
+            # endタグ内で新しく指定されたスタイルを適用
+            additional_styles = re.findall(r'(\w+)\s*:\s*(\w+)', tag)
+            for style, color_name in additional_styles:
+                if style == "fore" and "fore" in reset_options:
+                    color_value = self.get_color_by_name(color_name)
+                    if color_value:
+                        output += self.set_rgba_color(color_value)
+                        self.active_styles["fore"] = color_value
+                elif style == "back" and "back" in reset_options:
+                    color_value = self.get_color_by_name(color_name)
+                    if color_value:
+                        output += self.set_rgba_background(color_value)
+                        self.active_styles["back"] = color_value
+                elif style == "bold" and "bold" in reset_options:
+                    output += self.bold
+                    self.active_styles["bold"] = True
+                elif style == "italic" and "italic" in reset_options:
+                    output += self.italic
+                    self.active_styles["italic"] = True
+                elif style == "underline" and "underline" in reset_options:
+                    output += self.underline
+                    self.active_styles["underline"] = True
+
+            # リセット対象外のスタイルを再適用
+            output += self.reapply_styles(exclude=reset_options)
             return output
 
-        # スタイルをリセットする
-        reset_fore = False
-        reset_back = False
-
-        # 指定された色やスタイルを処理
+        # それ以外のスタイルタグの処理
         style_tags = re.findall(r'(\w+)\s*:\s*(\w+)', tag)
         for style, color_name in style_tags:
             if style == "fore":
@@ -115,15 +142,11 @@ class ColorPrinter:
                 if color_value:
                     output += self.set_rgba_color(color_value)
                     self.active_styles["fore"] = color_value
-                else:
-                    reset_fore = True
             elif style == "back":
                 color_value = self.get_color_by_name(color_name)
                 if color_value:
                     output += self.set_rgba_background(color_value)
                     self.active_styles["back"] = color_value
-                else:
-                    reset_back = True
 
         # スタイルの適用
         if "bold" in tag:
@@ -135,31 +158,34 @@ class ColorPrinter:
         if "underline" in tag:
             output += self.underline
             self.active_styles["underline"] = True
-        
-        # reset指定の処理
-        if "end" in tag:
-            if reset_fore:
-                output += self.reset
-                self.active_styles["fore"] = ""
-            if reset_back:
-                output += self.reset
-                self.active_styles["back"] = ""
 
         return output
 
-    def reset_styles_to_output(self) -> str:
+    def reapply_styles(self, exclude: set) -> str:
         """
-        現在のアクティブスタイルに基づいてリセット用のエスケープシーケンスを生成。
+        リセット後に再適用するスタイルを生成する。
+
+        Args:
+            exclude (set): 再適用しないスタイルのセット。
 
         Returns:
-            str: リセット用のANSIエスケープシーケンス。
+            str: 再適用するANSIエスケープシーケンス。
         """
-        output = self.reset
-        if self.active_styles["fore"]:
-            output += self.reset
-        if self.active_styles["back"]:
-            output += self.reset
+        output = ""
+        if "fore" not in exclude and self.active_styles["fore"]:
+            output += self.set_rgba_color(self.active_styles["fore"])
+        if "back" not in exclude and self.active_styles["back"]:
+            output += self.set_rgba_background(self.active_styles["back"])
+        if "bold" not in exclude and self.active_styles["bold"]:
+            output += self.bold
+        if "italic" not in exclude and self.active_styles["italic"]:
+            output += self.italic
+        if "underline" not in exclude and self.active_styles["underline"]:
+            output += self.underline
         return output
+
+
+
 
     def print_with_color(self, text: str, *args: tuple, **kwargs: any):
         """
