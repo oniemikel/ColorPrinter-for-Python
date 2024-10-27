@@ -156,7 +156,7 @@ print関数で指定する文字列において（クォーテーションで区
       `end`のみを指定すると、すべてのスタイルがリセットされ、デフォルト表示に戻る。  
       実行例：
      ```python
-     print("{fore:red}red{end} text and {fore:black back:white}black{end} text.") # redが赤色、blackについては、前景色が黒色、背景色が白色で表示される。
+     print("{fore:red}red{end} text and {fore:black, back:white}black{end} text.") # redが赤色、blackについては、前景色が黒色、背景色が白色で表示される。
      ```  
      ![image](https://github.com/user-attachments/assets/6d3e4ff3-a9eb-4dbd-85ce-28a6a12c5f87)
 
@@ -165,14 +165,14 @@ print関数で指定する文字列において（クォーテーションで区
       `end`にタグの引数を持たせた場合、そのタグのスタイルのみをリセットすることができる。なお、この引数は複数指定できる。  
       実行例：
      ```python
-     print("{fore:red back:white}red{end fore}, {fore:blue}blue{end fore}{fore:black italic}... but the WHITE background.") # 文字列全体の背景が白色で、redが赤色、blueが青色、そしてそれ以降の文字がイタリック体で表示される。
+     print("{fore:red back:white}red{end fore}, {fore:blue}blue{end fore}{fore:black, italic}... but the WHITE background.") # 文字列全体の背景が白色で、redが赤色、blueが青色、そしてそれ以降の文字がイタリック体で表示される。
      ```  
      ![image](https://github.com/user-attachments/assets/5a1565ac-6058-4aa7-ab95-c8bb2793c49e)
 
      ただし、同じタグ内で`end`と併用して新たなスタイルを適用すると、`end`が無視される。
      実行例：
      ```python
-     print("{fore:red back:white}red{end fore}, {fore:blue}blue{italic end fore}... but the WHITE background.") # 上記と同じ結果を出力すると思われるはずだが、endが無視され、前景色が青色のまま、italicのみがitalicに適用されている。
+     print("{fore:red, back:white}red{end fore}, {fore:blue}blue{italic, end fore}... but the WHITE background.") # 上記と同じ結果を出力すると思われるはずだが、endが無視され、前景色が青色のまま、italicのみがitalicに適用されている。
      ```
      ![image](https://github.com/user-attachments/assets/6e13532b-acec-4fff-ad4d-62fb27dd3aeb)
 
