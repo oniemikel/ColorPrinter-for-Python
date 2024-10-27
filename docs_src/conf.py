@@ -20,7 +20,7 @@ release = '2.1.1'
 
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon'
 ]
-
+napoleon_google_docstring = True
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
