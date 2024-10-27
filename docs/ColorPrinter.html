@@ -1,23 +1,22 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="ja" data-content_root="./">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ColorPrinter package &mdash; ColorPrinter 2.1.1 ドキュメント</title>
+  <title>ColorPrinter package &mdash; ColorPrinter 2.1.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
-      <script src="_static/documentation_options.js?v=1d00055d"></script>
+      <script src="_static/documentation_options.js?v=841abef3"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-      <script src="_static/translations.js?v=4755f45a"></script>
     <script src="_static/js/theme.js"></script>
-    <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="検索" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -116,7 +115,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="ColorPrinter.main.ColorPrinter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ColorPrinter.main.</span></span><span class="sig-name descname"><span class="pre">ColorPrinter</span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter" title="Link to this definition">¶</a></dt>
-<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>色付きのテキストをコンソールに出力するクラス。</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ColorPrinter.main.ColorPrinter.COLOR_MAP">
@@ -128,13 +127,13 @@
 <span class="sig-name descname"><span class="pre">get_color_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.get_color_by_name" title="Link to this definition">¶</a></dt>
 <dd><p>色名からRGBA値を取得する。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) -- 色の名前。</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – 色の名前。</p>
 </dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>RGBA値を含むタプル。色名が無効な場合はNoneを返す。</p>
 </dd>
-<dt class="field-odd">戻り値の型<span class="colon">:</span></dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>tuple</p>
 </dd>
 </dl>
@@ -145,13 +144,13 @@
 <span class="sig-name descname"><span class="pre">parse_color_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.parse_color_tag" title="Link to this definition">¶</a></dt>
 <dd><p>タグを解析して対応するエスケープシーケンスに変換。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>tag</strong> (<em>str</em>) -- 解析する色指定のタグ。</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tag</strong> (<em>str</em>) – 解析する色指定のタグ。</p>
 </dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>対応するANSIエスケープシーケンス。</p>
 </dd>
-<dt class="field-odd">戻り値の型<span class="colon">:</span></dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
 </dd>
 </dl>
@@ -162,11 +161,11 @@
 <span class="sig-name descname"><span class="pre">print_with_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.print_with_color" title="Link to this definition">¶</a></dt>
 <dd><p>テキスト内のタグを解析して色付きで表示。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>text</strong> (<em>str</em>) -- 色付きで表示するテキスト。</p></li>
-<li><p><strong>*args</strong> -- print関数に渡す追加の引数。</p></li>
-<li><p><strong>**kwargs</strong> -- print関数に渡す追加のキーワード引数。</p></li>
+<li><p><strong>text</strong> (<em>str</em>) – 色付きで表示するテキスト。</p></li>
+<li><p><strong>*args</strong> – print関数に渡す追加の引数。</p></li>
+<li><p><strong>**kwargs</strong> – print関数に渡す追加のキーワード引数。</p></li>
 </ul>
 </dd>
 </dl>
@@ -183,10 +182,10 @@
 <span class="sig-name descname"><span class="pre">reset_styles_to_output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.reset_styles_to_output" title="Link to this definition">¶</a></dt>
 <dd><p>現在のアクティブスタイルに基づいてリセット用のエスケープシーケンスを生成。</p>
 <dl class="field-list simple">
-<dt class="field-odd">戻り値<span class="colon">:</span></dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>リセット用のANSIエスケープシーケンス。</p>
 </dd>
-<dt class="field-even">戻り値の型<span class="colon">:</span></dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
@@ -197,13 +196,13 @@
 <span class="sig-name descname"><span class="pre">set_rgba_background</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.set_rgba_background" title="Link to this definition">¶</a></dt>
 <dd><p>RGBA値に基づいて背景色のANSIエスケープシーケンスを生成する。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>color</strong> (<em>tuple</em>) -- RGBA値を含むタプル。</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>color</strong> (<em>tuple</em>) – RGBA値を含むタプル。</p>
 </dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>背景色用のANSIエスケープシーケンス。</p>
 </dd>
-<dt class="field-odd">戻り値の型<span class="colon">:</span></dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
 </dd>
 </dl>
@@ -214,13 +213,13 @@
 <span class="sig-name descname"><span class="pre">set_rgba_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.set_rgba_color" title="Link to this definition">¶</a></dt>
 <dd><p>RGBA値に基づいて前景色のANSIエスケープシーケンスを生成する。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>color</strong> (<em>tuple</em>) -- RGBA値を含むタプル。</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>color</strong> (<em>tuple</em>) – RGBA値を含むタプル。</p>
 </dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>前景色用のANSIエスケープシーケンス。</p>
 </dd>
-<dt class="field-odd">戻り値の型<span class="colon">:</span></dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
 </dd>
 </dl>
@@ -233,11 +232,11 @@
 <span class="sig-prename descclassname"><span class="pre">ColorPrinter.main.</span></span><span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.main.print" title="Link to this definition">¶</a></dt>
 <dd><p>色付きでテキストを表示するために、print関数をオーバーラップするための関数。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>text</strong> (<em>str</em>) -- 色付きで表示するテキスト。</p></li>
-<li><p><strong>*args</strong> -- print関数に渡す追加の引数。</p></li>
-<li><p><strong>**kwargs</strong> -- print関数に渡す追加のキーワード引数。</p></li>
+<li><p><strong>text</strong> (<em>str</em>) – 色付きで表示するテキスト。</p></li>
+<li><p><strong>*args</strong> – print関数に渡す追加の引数。</p></li>
+<li><p><strong>**kwargs</strong> – print関数に渡す追加のキーワード引数。</p></li>
 </ul>
 </dd>
 </dl>
@@ -249,7 +248,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="ColorPrinter.ColorPrinter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ColorPrinter.</span></span><span class="sig-name descname"><span class="pre">ColorPrinter</span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter" title="Link to this definition">¶</a></dt>
-<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>色付きのテキストをコンソールに出力するクラス。</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ColorPrinter.ColorPrinter.COLOR_MAP">
@@ -271,13 +270,13 @@
 <span class="sig-name descname"><span class="pre">get_color_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter.get_color_by_name" title="Link to this definition">¶</a></dt>
 <dd><p>色名からRGBA値を取得する。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) -- 色の名前。</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – 色の名前。</p>
 </dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>RGBA値を含むタプル。色名が無効な場合はNoneを返す。</p>
 </dd>
-<dt class="field-odd">戻り値の型<span class="colon">:</span></dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>tuple</p>
 </dd>
 </dl>
@@ -293,13 +292,13 @@
 <span class="sig-name descname"><span class="pre">parse_color_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter.parse_color_tag" title="Link to this definition">¶</a></dt>
 <dd><p>タグを解析して対応するエスケープシーケンスに変換。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>tag</strong> (<em>str</em>) -- 解析する色指定のタグ。</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tag</strong> (<em>str</em>) – 解析する色指定のタグ。</p>
 </dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>対応するANSIエスケープシーケンス。</p>
 </dd>
-<dt class="field-odd">戻り値の型<span class="colon">:</span></dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
 </dd>
 </dl>
@@ -310,11 +309,11 @@
 <span class="sig-name descname"><span class="pre">print_with_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.ColorPrinter.print_with_color" title="Link to this definition">¶</a></dt>
 <dd><p>テキスト内のタグを解析して色付きで表示。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>text</strong> (<em>str</em>) -- 色付きで表示するテキスト。</p></li>
-<li><p><strong>*args</strong> -- print関数に渡す追加の引数。</p></li>
-<li><p><strong>**kwargs</strong> -- print関数に渡す追加のキーワード引数。</p></li>
+<li><p><strong>text</strong> (<em>str</em>) – 色付きで表示するテキスト。</p></li>
+<li><p><strong>*args</strong> – print関数に渡す追加の引数。</p></li>
+<li><p><strong>**kwargs</strong> – print関数に渡す追加のキーワード引数。</p></li>
 </ul>
 </dd>
 </dl>
@@ -336,10 +335,10 @@
 <span class="sig-name descname"><span class="pre">reset_styles_to_output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter.reset_styles_to_output" title="Link to this definition">¶</a></dt>
 <dd><p>現在のアクティブスタイルに基づいてリセット用のエスケープシーケンスを生成。</p>
 <dl class="field-list simple">
-<dt class="field-odd">戻り値<span class="colon">:</span></dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>リセット用のANSIエスケープシーケンス。</p>
 </dd>
-<dt class="field-even">戻り値の型<span class="colon">:</span></dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
@@ -350,13 +349,13 @@
 <span class="sig-name descname"><span class="pre">set_rgba_background</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter.set_rgba_background" title="Link to this definition">¶</a></dt>
 <dd><p>RGBA値に基づいて背景色のANSIエスケープシーケンスを生成する。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>color</strong> (<em>tuple</em>) -- RGBA値を含むタプル。</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>color</strong> (<em>tuple</em>) – RGBA値を含むタプル。</p>
 </dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>背景色用のANSIエスケープシーケンス。</p>
 </dd>
-<dt class="field-odd">戻り値の型<span class="colon">:</span></dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
 </dd>
 </dl>
@@ -367,13 +366,13 @@
 <span class="sig-name descname"><span class="pre">set_rgba_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter.set_rgba_color" title="Link to this definition">¶</a></dt>
 <dd><p>RGBA値に基づいて前景色のANSIエスケープシーケンスを生成する。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>color</strong> (<em>tuple</em>) -- RGBA値を含むタプル。</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>color</strong> (<em>tuple</em>) – RGBA値を含むタプル。</p>
 </dd>
-<dt class="field-even">戻り値<span class="colon">:</span></dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>前景色用のANSIエスケープシーケンス。</p>
 </dd>
-<dt class="field-odd">戻り値の型<span class="colon">:</span></dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
 </dd>
 </dl>
@@ -391,11 +390,11 @@
 <span class="sig-prename descclassname"><span class="pre">ColorPrinter.</span></span><span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.print" title="Link to this definition">¶</a></dt>
 <dd><p>色付きでテキストを表示するために、print関数をオーバーラップするための関数。</p>
 <dl class="field-list simple">
-<dt class="field-odd">パラメータ<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>text</strong> (<em>str</em>) -- 色付きで表示するテキスト。</p></li>
-<li><p><strong>*args</strong> -- print関数に渡す追加の引数。</p></li>
-<li><p><strong>**kwargs</strong> -- print関数に渡す追加のキーワード引数。</p></li>
+<li><p><strong>text</strong> (<em>str</em>) – 色付きで表示するテキスト。</p></li>
+<li><p><strong>*args</strong> – print関数に渡す追加の引数。</p></li>
+<li><p><strong>**kwargs</strong> – print関数に渡す追加のキーワード引数。</p></li>
 </ul>
 </dd>
 </dl>
