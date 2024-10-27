@@ -6,12 +6,12 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ColorPrinter package &mdash; ColorPrinter 2.3.0 documentation</title>
+  <title>ColorPrinter package &mdash; ColorPrinter 2.4.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
-      <script src="_static/documentation_options.js?v=c3c8ae58"></script>
+      <script src="_static/documentation_options.js?v=4d935f96"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -48,8 +48,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.main.ColorPrinter.COLOR_MAP"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.COLOR_MAP</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.main.ColorPrinter.get_color_by_name"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.get_color_by_name()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.main.ColorPrinter.parse_color_tag"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.parse_color_tag()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.main.ColorPrinter.parse_rgba"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.parse_rgba()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.main.ColorPrinter.print_with_color"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.print_with_color()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.main.ColorPrinter.reapply_styles"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.reapply_styles()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.main.ColorPrinter.reset_styles"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.reset_styles()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.main.ColorPrinter.set_rgba_background"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.set_rgba_background()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.main.ColorPrinter.set_rgba_color"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.set_rgba_color()</span></code></a></li>
@@ -66,8 +66,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.ColorPrinter.get_color_by_name"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.get_color_by_name()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.ColorPrinter.italic"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.italic</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.ColorPrinter.parse_color_tag"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.parse_color_tag()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.ColorPrinter.parse_rgba"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.parse_rgba()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.ColorPrinter.print_with_color"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.print_with_color()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.ColorPrinter.reapply_styles"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.reapply_styles()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.ColorPrinter.reset"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.reset</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.ColorPrinter.reset_styles"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.reset_styles()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ColorPrinter.ColorPrinter.set_rgba_background"><code class="docutils literal notranslate"><span class="pre">ColorPrinter.set_rgba_background()</span></code></a></li>
@@ -158,8 +158,25 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="ColorPrinter.main.ColorPrinter.parse_rgba">
+<span class="sig-name descname"><span class="pre">parse_rgba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.parse_rgba" title="Link to this definition">¶</a></dt>
+<dd><p>RGBA形式の文字列を解析し、RGBA値をタプルとして返す。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>str</em>) – RGBA形式の文字列。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>RGBA値を含むタプル。無効な場合はNoneを返す。</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="ColorPrinter.main.ColorPrinter.print_with_color">
-<span class="sig-name descname"><span class="pre">print_with_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.print_with_color" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">print_with_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.print_with_color" title="Link to this definition">¶</a></dt>
 <dd><p>テキスト内のタグを解析して色付きで表示。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -168,23 +185,6 @@
 <li><p><strong>*args</strong> – print関数に渡す追加の引数。</p></li>
 <li><p><strong>**kwargs</strong> – print関数に渡す追加のキーワード引数。</p></li>
 </ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ColorPrinter.main.ColorPrinter.reapply_styles">
-<span class="sig-name descname"><span class="pre">reapply_styles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.main.ColorPrinter.reapply_styles" title="Link to this definition">¶</a></dt>
-<dd><p>リセット後に再適用するスタイルを生成する。</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>exclude</strong> (<em>set</em>) – 再適用しないスタイルのセット。</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>再適用するANSIエスケープシーケンス。</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -309,8 +309,25 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="ColorPrinter.ColorPrinter.parse_rgba">
+<span class="sig-name descname"><span class="pre">parse_rgba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter.parse_rgba" title="Link to this definition">¶</a></dt>
+<dd><p>RGBA形式の文字列を解析し、RGBA値をタプルとして返す。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>str</em>) – RGBA形式の文字列。</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>RGBA値を含むタプル。無効な場合はNoneを返す。</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="ColorPrinter.ColorPrinter.print_with_color">
-<span class="sig-name descname"><span class="pre">print_with_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.ColorPrinter.print_with_color" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">print_with_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ColorPrinter.ColorPrinter.print_with_color" title="Link to this definition">¶</a></dt>
 <dd><p>テキスト内のタグを解析して色付きで表示。</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -319,23 +336,6 @@
 <li><p><strong>*args</strong> – print関数に渡す追加の引数。</p></li>
 <li><p><strong>**kwargs</strong> – print関数に渡す追加のキーワード引数。</p></li>
 </ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ColorPrinter.ColorPrinter.reapply_styles">
-<span class="sig-name descname"><span class="pre">reapply_styles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ColorPrinter.ColorPrinter.reapply_styles" title="Link to this definition">¶</a></dt>
-<dd><p>リセット後に再適用するスタイルを生成する。</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>exclude</strong> (<em>set</em>) – 再適用しないスタイルのセット。</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>再適用するANSIエスケープシーケンス。</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 </dd></dl>

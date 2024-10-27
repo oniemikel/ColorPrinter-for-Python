@@ -6,18 +6,18 @@ class ColorPrinter:
     色付きのテキストをコンソールに出力するクラス。
     """
 
-    # 色名とRGBA値のマッピング
+    # 色名とRGBA値のマッピング（アルファ値は1）
     COLOR_MAP: dict[str, tuple] = {
-        "black"  : (  0,   0,   0, 255),
-        "white"  : (255, 255, 255, 255),
-        "red"    : (255,   0,   0, 255),
-        "green"  : (  0, 255,   0, 255),
-        "blue"   : (  0,   0, 255, 255),
-        "yellow" : (255, 255,   0, 255),
-        "cyan"   : (  0, 255, 255, 255),
-        "magenta": (255,   0, 255, 255),
-        "gray"   : (128, 128, 128, 255),
-        "skyblue": (135, 206, 235, 255),
+        "black"   : (  0,   0,   0,  1),
+        "white"   : (255, 255, 255,  1),
+        "red"     : (255,   0,   0,  1),
+        "green"   : (  0, 255,   0,  1),
+        "blue"    : (  0,   0, 255,  1),
+        "yellow"  : (255, 255,   0,  1),
+        "cyan"    : (  0, 255, 255,  1),
+        "magenta" : (255,   0, 255,  1),
+        "gray"    : (128, 128, 128,  1),
+        "skyblue" : (135, 206, 235,  1),
     }
 
     def __init__(self):
@@ -46,7 +46,7 @@ class ColorPrinter:
         Returns:
             str: 前景色用のANSIエスケープシーケンス。
         """
-        r, g, b, _ = color
+        r, g, b, a = color
         return f"\033[38;2;{r};{g};{b}m"
 
     def set_rgba_background(self, color: tuple) -> str:
@@ -59,7 +59,7 @@ class ColorPrinter:
         Returns:
             str: 背景色用のANSIエスケープシーケンス。
         """
-        r, g, b, _ = color
+        r, g, b, a = color
         return f"\033[48;2;{r};{g};{b}m"
 
     def get_color_by_name(self, name: str) -> tuple:
@@ -73,6 +73,24 @@ class ColorPrinter:
             tuple: RGBA値を含むタプル。色名が無効な場合はNoneを返す。
         """
         return self.COLOR_MAP.get(name.lower(), None)
+
+    def parse_rgba(self, value: str) -> tuple:
+        """
+        RGBA形式の文字列を解析し、RGBA値をタプルとして返す。
+
+        Args:
+            value (str): RGBA形式の文字列。
+
+        Returns:
+            tuple: RGBA値を含むタプル。無効な場合はNoneを返す。
+        """
+        # カンマの前後に空白があっても正しくマッチする正規表現
+        rgba_match = re.match(r'rgba\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,?\s*([\d.]*)\s*\)', value)
+        if rgba_match:
+            r, g, b = map(int, rgba_match.groups()[:3])  # r, g, bを整数に変換
+            a = float(rgba_match.group(4)) if rgba_match.group(4) else 1  # アルファ値が指定されていない場合は1
+            return (r, g, b, a)  # aを指定された値または1にする
+        return None
 
     def reset_styles(self):
         """
@@ -96,98 +114,53 @@ class ColorPrinter:
         Returns:
             str: 対応するANSIエスケープシーケンス。
         """
-        output: str = ""
+        output = ""
 
-        # endタグの処理（特定の色やスタイルのみリセット）
-        if tag.startswith("{end"):
-            # まず、endタグでリセットする項目を特定
-            end_options = re.findall(r'end\s*(\w+)?', tag)
-            reset_options = set(end_options) if end_options[0] else {"fore", "back", "bold", "italic", "underline"}
-
-            # 全体リセット
+        # endタグの処理
+        if "end" in tag:
+            # 現在のスタイルをリセット
             output += self.reset
+            self.reset_styles()
 
-            # endタグ内で新しく指定されたスタイルを適用
-            additional_styles = re.findall(r'(\w+)\s*:\s*(\w+)', tag)
-            for style, color_name in additional_styles:
-                if style == "fore" and "fore" in reset_options:
-                    color_value = self.get_color_by_name(color_name)
+            # タグに指定されたスタイルを適用
+            style_tags = re.findall(r'(\w+)\s*:\s*([\w(),\s]+)', tag)
+            for style, color_value in style_tags:
+                if style == "fore":
+                    color_value = self.parse_rgba(color_value) or self.get_color_by_name(color_value)
                     if color_value:
                         output += self.set_rgba_color(color_value)
-                        self.active_styles["fore"] = color_value
-                elif style == "back" and "back" in reset_options:
-                    color_value = self.get_color_by_name(color_name)
+                elif style == "back":
+                    color_value = self.parse_rgba(color_value) or self.get_color_by_name(color_value)
                     if color_value:
                         output += self.set_rgba_background(color_value)
-                        self.active_styles["back"] = color_value
-                elif style == "bold" and "bold" in reset_options:
-                    output += self.bold
-                    self.active_styles["bold"] = True
-                elif style == "italic" and "italic" in reset_options:
-                    output += self.italic
-                    self.active_styles["italic"] = True
-                elif style == "underline" and "underline" in reset_options:
-                    output += self.underline
-                    self.active_styles["underline"] = True
-
-            # リセット対象外のスタイルを再適用
-            output += self.reapply_styles(exclude=reset_options)
             return output
 
-        # それ以外のスタイルタグの処理
-        style_tags = re.findall(r'(\w+)\s*:\s*(\w+)', tag)
-        for style, color_name in style_tags:
+        # 色とスタイルの指定
+        style_tags = re.findall(r'(\w+)\s*:\s*([\w(),\s]+)', tag)
+        for style, color_value in style_tags:
             if style == "fore":
-                color_value = self.get_color_by_name(color_name)
+                color_value = self.parse_rgba(color_value) or self.get_color_by_name(color_value)
                 if color_value:
                     output += self.set_rgba_color(color_value)
                     self.active_styles["fore"] = color_value
             elif style == "back":
-                color_value = self.get_color_by_name(color_name)
+                color_value = self.parse_rgba(color_value) or self.get_color_by_name(color_value)
                 if color_value:
                     output += self.set_rgba_background(color_value)
                     self.active_styles["back"] = color_value
-
-        # スタイルの適用
-        if "bold" in tag:
-            output += self.bold
-            self.active_styles["bold"] = True
-        if "italic" in tag:
-            output += self.italic
-            self.active_styles["italic"] = True
-        if "underline" in tag:
-            output += self.underline
-            self.active_styles["underline"] = True
+            elif style == "bold":
+                output += self.bold
+                self.active_styles["bold"] = True
+            elif style == "italic":
+                output += self.italic
+                self.active_styles["italic"] = True
+            elif style == "underline":
+                output += self.underline
+                self.active_styles["underline"] = True
 
         return output
 
-    def reapply_styles(self, exclude: set) -> str:
-        """
-        リセット後に再適用するスタイルを生成する。
-
-        Args:
-            exclude (set): 再適用しないスタイルのセット。
-
-        Returns:
-            str: 再適用するANSIエスケープシーケンス。
-        """
-        output = ""
-        if "fore" not in exclude and self.active_styles["fore"]:
-            output += self.set_rgba_color(self.active_styles["fore"])
-        if "back" not in exclude and self.active_styles["back"]:
-            output += self.set_rgba_background(self.active_styles["back"])
-        if "bold" not in exclude and self.active_styles["bold"]:
-            output += self.bold
-        if "italic" not in exclude and self.active_styles["italic"]:
-            output += self.italic
-        if "underline" not in exclude and self.active_styles["underline"]:
-            output += self.underline
-        return output
-
-
-
-
-    def print_with_color(self, text: str, *args: tuple, **kwargs: any):
+    def print_with_color(self, text: str, *args, **kwargs):
         """
         テキスト内のタグを解析して色付きで表示。
 
@@ -198,18 +171,15 @@ class ColorPrinter:
         """
         parts = re.split(r'(\{.*?\})', text)
         colored_text = ""
-
         for part in parts:
             if part.startswith("{") and part.endswith("}"):
                 colored_text += self.parse_color_tag(part)
             else:
                 colored_text += part
-
-        # 最後にリセットコードを追加
         colored_text += self.reset
-        
-        # 元のprint関数を使用して出力
         builtins.print(colored_text, *args, **kwargs)
+
+
 
 def print(text, *args, **kwargs):
     """
