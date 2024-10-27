@@ -13,7 +13,11 @@ sys.path.insert(0, os.path.abspath('..'))
 project = 'ColorPrinter'
 copyright = '2024, OnieMikel'
 author = 'OnieMikel'
-release = '2.1.1'
+
+from yaml import safe_load
+from pathlib import Path
+with open(Path(__file__).resolve().parent.parent/Path('config.yml'), 'r', encoding='utf-8') as file:
+    release = safe_load(file).get('version')
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
